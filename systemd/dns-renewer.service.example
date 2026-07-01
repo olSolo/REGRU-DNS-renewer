@@ -1,0 +1,14 @@
+[Unit]
+Description=Update REG.RU A/AAAA records from config.json
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=@USER@
+WorkingDirectory=@INSTALL_DIR@
+ExecStart=/usr/bin/python3 @INSTALL_DIR@/dns_renewer.py -c @INSTALL_DIR@/config.json
+Environment=HOME=@HOME_DIR@
+
+[Install]
+WantedBy=multi-user.target

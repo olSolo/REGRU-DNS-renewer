@@ -1,0 +1,41 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+!.env.*.example
+config.json
+config.*.json
+!config.json.example
+*.local.json
+
+# REG.RU credentials (any common name)
+.regru_api_env
+regru_api.env
+**/regru_api.env
+
+# REG.RU client certificates and keys
+*.crt
+*.key
+*.pem
+*.p12
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Generated systemd unit (use install-systemd.sh)
+systemd/dns-renewer.service
+
+# Local pre-push checks (never commit — may list private domains)
+scripts/

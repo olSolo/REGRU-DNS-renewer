@@ -1,0 +1,43 @@
+{
+  "ip_detection": {
+    "ipv4": {
+      "methods": ["local", "url"],
+      "use_local_interface": true,
+      "urls": [
+        "https://api.ipify.org",
+        "https://ifconfig.me/ip"
+      ]
+    },
+    "ipv6": {
+      "enabled": true,
+      "methods": ["local", "url"],
+      "use_local_interface": true,
+      "urls": [
+        "https://api6.ipify.org",
+        "https://ifconfig.me/ip"
+      ]
+    }
+  },
+  "regru": {
+    "env_file": "~/.regru_api_env",
+    "ssl": {
+      "cert": "",
+      "key": ""
+    }
+  },
+  "zones": [
+    {
+      "domain": "example.com",
+      "subdomains": ["@", "www"],
+      "record_types": { "a": true, "aaaa": true }
+    },
+    {
+      "domain": "other.example.com",
+      "subdomains": ["@", "www"],
+      "record_types": { "a": true, "aaaa": false },
+      "regru": {
+        "env_file": ".env.other"
+      }
+    }
+  ]
+}
